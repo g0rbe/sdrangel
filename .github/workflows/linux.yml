@@ -6,6 +6,8 @@ on:
       - linux_github_release
     tags:
       - 'v*'
+  
+  workflow_dispatch:
 
 jobs:
   build_deb:
@@ -60,4 +62,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: sdrangel_${{ steps.get_version.outputs.version }}_${{ matrix.os }}_amd64.deb
+
 
