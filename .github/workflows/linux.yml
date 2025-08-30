@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-       os: [ubuntu-22.04, ubuntu-24.04]
+       os: [debian-stable, debian-testing]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -60,3 +60,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: sdrangel_${{ steps.get_version.outputs.version }}_${{ matrix.os }}_amd64.deb
+
